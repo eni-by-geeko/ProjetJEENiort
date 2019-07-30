@@ -33,11 +33,6 @@
 				  </button>
 				  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
 				    <ul class="navbar-nav mr-auto">
-				      <li class="nav-item active">
-				        <a class="nav-link" href="#">Nos Restaurants
-				          <span class="sr-only">(current)</span>
-				        </a>
-				      </li>
 				      <li class="nav-item dropdown">
 				        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
 				          aria-haspopup="true" aria-expanded="false">Nos Plats
@@ -55,8 +50,8 @@
 				        </a>
 				        <div class="dropdown-menu dropdown-menu-right dropdown-default"
 				          aria-labelledby="navbarDropdownMenuLink-333">
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/ServletCompte">Mon compte</a>
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/ServletAccueil">Se déconnecter</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/compte">Mon compte</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/web/accueil">Se déconnecter</a>
 				        </div>
 				      </li>
 				    </ul>
@@ -74,12 +69,7 @@
 				  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
 				    <ul class="navbar-nav mr-auto">
 				      <li class="nav-item active">
-				        <a class="nav-link" href="#">Nos Restaurants
-				          <span class="sr-only">(current)</span>
-				        </a>
-				      </li>
-				      <li class="nav-item active">
-				        <a class="nav-link" href="#">Nos Plats
+				        <a class="nav-link" href="${pageContext.request.contextPath}/Plats">Nos Plats
 				          <span class="sr-only">(current)</span>
 				        </a>
 				      </li>
@@ -92,8 +82,8 @@
 				        </a>
 				        <div class="dropdown-menu dropdown-menu-right dropdown-default"
 				          aria-labelledby="navbarDropdownMenuLink-333">
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/ServletCompte">Mon compte</a>
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/ServletCompte">Se déconnecter</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/compte">Mon compte</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/compte">Se déconnecter</a>
 				        </div>
 				      </li>
 				    </ul>
@@ -113,12 +103,7 @@
 				  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
 				    <ul class="navbar-nav mr-auto">
 				      <li class="nav-item active">
-				        <a class="nav-link" href="#">Nos Restaurants
-				          <span class="sr-only">(current)</span>
-				        </a>
-				      </li>
-				      <li class="nav-item active">
-				        <a class="nav-link" href="#">Nos Plats
+				        <a class="nav-link" href="${pageContext.request.contextPath}/Plats">Nos Plats
 				          <span class="sr-only">(current)</span>
 				        </a>
 				      </li>
@@ -131,8 +116,8 @@
 				        </a>
 				        <div class="dropdown-menu dropdown-menu-right dropdown-default"
 				          aria-labelledby="navbarDropdownMenuLink-333">
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/ServletConnexion">Se connecter</a>
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/ServletInscription">S'inscrire</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/connexion">Se connecter</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/Inscription">S'inscrire</a>
 				        </div>
 				      </li>
 				    </ul>
