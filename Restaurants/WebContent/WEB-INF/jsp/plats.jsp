@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,26 +6,21 @@
 <!--  Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<title>Insert title here</title>
-<style>section {margin-top:50px;}
-</style>
+<title>Nos plats</title>
+
+<style> body {background-color: black;} img {height:500px; border-radius:15px;} h1, h2 {color: white;} </style>
+
 </head>
 <body>
 <header class="row">
-	<div class="col-lg-12 m-5">
+	<div class="col-lg-12 mt-3">
 		<h1 class="text-center">101 Recettes Gourmandes</h1>
+		<h2 class="text-center">Nos plats</h2>
 	</div>
 </header>
-<div class="container-item">
+<div class="container-item mt-3">
 	<div class="row">
 		<div class="col-lg-6 offset-lg-3">
-			<div class="row">
-				<div class="col-md-12">
-					<h2 class="text-center">
-						Nos plats
-					</h2>
-				</div>
-			</div>
 			<div class="carousel slide" id="carousel-564796">
 				<ol class="carousel-indicators">
 					<li data-slide-to="0" data-target="#carousel-564796" class="active">
@@ -39,35 +32,35 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img class="d-block w-100" alt="Carousel Bootstrap First" src="${pageContext.request.contextPath}/PlatN1.jpg" />
+						<img class="d-block w-100" alt="Plat n°1 PlatN1.jpg" src="${pageContext.request.contextPath}/img/PlatN1.jpg" />
 						<div class="carousel-caption">
 							<h4>
-								First Thumbnail label
+								Plat 1
 							</h4>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+									Description plat 1
 							</p>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" alt="Carousel Bootstrap Second" src="https://www.layoutit.com/img/sports-q-c-1600-500-2.jpg" />
+						<img class="d-block w-100" alt="Carousel Bootstrap Second" src="${pageContext.request.contextPath}/img/PlatN2.jpg" />
 						<div class="carousel-caption">
 							<h4>
-								Second Thumbnail label
+								Plat 2
 							</h4>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+									Description plat 2
 							</p>
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img class="d-block w-100" alt="Carousel Bootstrap Third" src="https://www.layoutit.com/img/sports-q-c-1600-500-3.jpg" />
+						<img class="d-block w-100" alt="Carousel Bootstrap Third" src="${pageContext.request.contextPath}/img/PlatN3.jpg" />
 						<div class="carousel-caption">
 							<h4>
-								Third Thumbnail label
+								Plat 3
 							</h4>
 							<p>
-								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+									Description plat 3
 							</p>
 						</div>
 					</div>
@@ -76,8 +69,6 @@
 		</div>
 	</div>
 </div>
-	
-
 
 <!--  Bootstrap  -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
