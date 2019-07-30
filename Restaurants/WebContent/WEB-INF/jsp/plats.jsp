@@ -8,14 +8,14 @@
 
 <title>Nos plats</title>
 
-<style> body {background-color: black;} img {height:500px; border-radius:15px;} h1, h2 {color: white;} </style>
+<style> body {background-color: black;} img {height:500px; border-radius:15px;} </style>
 
 </head>
 <body>
 <header class="row">
 	<div class="col-lg-12 mt-3">
-		<h1 class="text-center">101 Recettes Gourmandes</h1>
-		<h2 class="text-center">Nos plats</h2>
+		<h1 class="text-center text-white">101 Recettes Gourmandes</h1>
+		<h2 class="text-center text-white">Nos plats</h2>
 	</div>
 </header>
 <div class="container-item mt-3">
