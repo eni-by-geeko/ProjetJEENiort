@@ -9,13 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.restaurants.bll.PersonneManager;
+import fr.restaurants.bo.Personne;
+
 /**
  * Servlet implementation class connexion
  */
 @WebServlet("/connexion")
 public class ServletConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+       // Attribut
+	private int tentative;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -23,7 +27,11 @@ public class ServletConnexion extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
+@Override
+public void init() throws ServletException {
+	 tentative = 0;
+	super.init();
+}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -36,8 +44,47 @@ public class ServletConnexion extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+			
+		// Recuperation des données
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		// Transaction avec la base de données
+		PersonneManager pm =new PersonneManager(); 
+		Personne personne= pm.getByEmail(email);
+		
+			if (personne==null) {
+				
+				request.setAttribute ("erreur", "Votre email est invalide");
+				tentative++;
+				
+			} else {
+				
+				if (password.equals (personne.getPassword())) {
+					
+					RequestDispatcher rd = request.getRequestDispatcher("/ServletAccueil");
+					rd.forward(request, response);					
+				}
+				else {
+					
+					request.setAttribute("erreur","Votre mot de passe est incorrect");
+					tentative++;
+				}
+				
+			}
+		if (tentative==3) {
+			tentative=0;
+			RequestDispatcher rd = request.getRequestDispatcher("/ServletInscription");
+			rd.forward(request, response);
+		}
+				 
+		
+		
+		 
+			
+			
+			
+		
 	}
 
 }
