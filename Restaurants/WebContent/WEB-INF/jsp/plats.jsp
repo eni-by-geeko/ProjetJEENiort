@@ -15,9 +15,7 @@
 <header class="row">
 	<div class="col-lg-12 mt-3">
 		<h1 class="text-center">101 Recettes Gourmandes</h1>
-		<h2 class="text-center">
-			Nos plats
-		</h2>
+		<h2 class="text-center">Nos plats</h2>
 	</div>
 </header>
 <div class="container-item mt-3">
