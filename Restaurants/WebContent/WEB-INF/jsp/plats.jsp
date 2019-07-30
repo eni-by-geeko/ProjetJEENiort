@@ -7,9 +7,7 @@
 
 <!--  Bootstrap  -->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
 
 <style> body {background-color: black;} img {height:500px; border-radius:15px;} h1, h2 {color: white;} </style>
 
@@ -77,7 +75,7 @@
 	</div>
 
 	<jsp:include page="scriptJS.jsp"></jsp:include>
-
+	
 
 </body>
 </html>

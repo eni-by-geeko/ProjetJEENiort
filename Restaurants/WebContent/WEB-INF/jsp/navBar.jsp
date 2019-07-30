@@ -3,12 +3,6 @@
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>NavBar</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -19,15 +13,11 @@
   <!-- Your custom styles (optional) -->
   <link href="css/style.css" rel="stylesheet">
 
-
 <style type="text/css">
 nav {
 	background-color: #4285F4;
 }
 </style>
-
-</head>
-<body>
 
 	<c:choose>
 		<c:when test="${value==1}"> 			<!-- NAV BAR ADMINISTRATEUR-->
@@ -134,5 +124,3 @@ nav {
 		
 	</c:choose>
 
-</body>
-</html>
