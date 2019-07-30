@@ -4,16 +4,18 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<title>inscription</title>
 
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+
 <body>
+
+<jsp:include page="navBar.jsp"></jsp:include>
+
    <div class="container">
       <div class="col-md-6 mx-auto text-center">
          <div class="header-title">
@@ -57,6 +59,9 @@
          </div>
       </div>
    </div>
-</body>
+   
+   <jsp:include page="scriptJS.jsp"></jsp:include>
+   
+
 </body>
 </html>
