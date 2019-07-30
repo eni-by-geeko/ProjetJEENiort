@@ -20,13 +20,19 @@
   <link href="css/style.css" rel="stylesheet">
 
 
+<style type="text/css">
+nav {
+	background-color: #4285F4;
+}
+</style>
+
 </head>
 <body>
 
 	<c:choose>
 		<c:when test="${value==1}"> 			<!-- NAV BAR ADMINISTRATEUR-->
 				<nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
-				  <a class="navbar-brand" href="#">Accueil</a>
+				  <a class="navbar-brand" href="${pageContext.request.contextPath}/accueil">Accueil</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
 				    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
@@ -51,7 +57,7 @@
 				        <div class="dropdown-menu dropdown-menu-right dropdown-default"
 				          aria-labelledby="navbarDropdownMenuLink-333">
 				          <a class="dropdown-item" href="${pageContext.request.contextPath}/compte">Mon compte</a>
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/web/accueil">Se déconnecter</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/accueil">Se déconnecter</a>
 				        </div>
 				      </li>
 				    </ul>
@@ -61,7 +67,7 @@
 		</c:when>
 		<c:when test="${value==2}"> 			<!-- NAV BAR CLIENT--> 
 				<nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
-				  <a class="navbar-brand" href="#">Accueil</a>
+				  <a class="navbar-brand" href="${pageContext.request.contextPath}/accueil">Accueil</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
 				    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
@@ -94,8 +100,8 @@
 		
 		
 		<c:otherwise> 			<!-- NAV BAR DEFAUT-->
-				<nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
-				  <a class="navbar-brand" href="#">Accueil</a>
+				<nav class="mb-1 navbar navbar-expand-lg navbar-dark">
+				  <a class="navbar-brand" href="${pageContext.request.contextPath}/accueil">Accueil</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
 				    aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
 				    <span class="navbar-toggler-icon"></span>
@@ -127,20 +133,6 @@
 		</c:otherwise>
 		
 	</c:choose>
-
-
-
-
-		<!-- SCRIPTS -->
-	  <!-- JQuery -->
-	  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-	  <!-- Bootstrap tooltips -->
-	  <script type="text/javascript" src="js/popper.min.js"></script>
-	  <!-- Bootstrap core JavaScript -->
-	  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	  <!-- MDB core JavaScript -->
-	  <script type="text/javascript" src="js/mdb.min.js"></script>
-
 
 </body>
 </html>

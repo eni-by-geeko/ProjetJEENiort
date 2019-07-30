@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>ajouter plat</title>
 </head>
 <body>
 
+	<jsp:include page="navBar.jsp"></jsp:include>
+
+
+	<jsp:include page="scriptJS.jsp"></jsp:include>
+	
 </body>
 </html>
