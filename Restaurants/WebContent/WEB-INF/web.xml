@@ -12,11 +12,11 @@
   
   <servlet>
 	<servlet-name>NavBar</servlet-name>
-	<jsp-file>/WEB-INF/jsp/NavBar.jsp</jsp-file>
+	<jsp-file>/WEB-INF/jsp/navBar.jsp</jsp-file>
   </servlet> 
   <servlet-mapping>
 	<servlet-name>NavBar</servlet-name>
-	<url-pattern>/EssaiNavBar</url-pattern>
+	<url-pattern>/Essai_navBar</url-pattern>
   </servlet-mapping>
   
 </web-app>
