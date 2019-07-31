@@ -29,6 +29,7 @@ public class PersonneDAOJdbcImpl implements PersonneDAO {
 				
 				personne.setMail(rs.getString(1));
 				personne.setPassword(rs.getString(2));
+				personne.setStatut(rs.getString(3));
 				
 			}
 			

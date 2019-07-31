@@ -79,7 +79,7 @@ nav {
 				        <div class="dropdown-menu dropdown-menu-right dropdown-default"
 				          aria-labelledby="navbarDropdownMenuLink-333">
 				          <a class="dropdown-item" href="${pageContext.request.contextPath}/compte">Mon compte</a>
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/compte">Se déconnecter</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/accueil">Se déconnecter</a>
 				        </div>
 				      </li>
 				    </ul>
