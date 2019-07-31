@@ -50,8 +50,10 @@ public void init() throws ServletException {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
 		rd.forward(request, response);
+		
 	}
 		
+	
 	
 
 	/**
@@ -64,20 +66,23 @@ public void init() throws ServletException {
 		String password = request.getParameter("password");
 		
 		// Transaction avec la base de données
+		Personne personne=null;
 		PersonneManager pm =new PersonneManager(); 
-		Personne personne= pm.getByEmail(email);
+		personne= pm.getByEmail(email);
 		
-			if (personne==null) {
+		
+			if (personne.getMail()==null) {
 				
 				request.setAttribute ("erreur", "Votre email est invalide");
 				tentative++;
+				
 				
 			} else {
 				
 				if (password.equals(personne.getPassword())) {
 					HttpSession session = request.getSession();
 					session.setAttribute("statut", personne.getStatut());
-					
+
 					RequestDispatcher rd = request.getRequestDispatcher("/accueil");
 					rd.forward(request, response);					
 				}
@@ -85,22 +90,22 @@ public void init() throws ServletException {
 					
 					request.setAttribute("erreur","Votre mot de passe est incorrect");
 					tentative++;
+					
 				}
 				
 			}
 		if (tentative==3) {
 			tentative=0;
-			RequestDispatcher rd = request.getRequestDispatcher("/Inscription");
+
+			RequestDispatcher rd = request.getRequestDispatcher("/inscription");
+
 			rd.forward(request, response);
 		}
-				 
 		
-		
-		 
-			
-			
-			
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
+		rd.forward(request, response);		
 		
 	}
+	
 
 }
