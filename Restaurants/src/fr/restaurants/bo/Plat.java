@@ -12,7 +12,7 @@ public class Plat {
 	
 	 private int id ;
 	 private String descriptif;
-	 private String ingrédients; // Si temps dispo: créer class Ingredients
+	 private String ingredients; // Si temps dispo: créer class Ingredients
 	 private float prix;
 	 private String url; // url de l'image: photo du plat
 	 private String nom;
@@ -25,17 +25,17 @@ public class Plat {
 
 	/**
 	 * @param descriptif Déscription du plat affiché sous le carrousel
-	 * @param ingrédients Liste des ingrédients en chaîne de caractère
+	 * @param ingredients Liste des ingrédients en chaîne de caractère
 	 * @param prix Prix du plat
 	 * @param uRL Adresse de l'image, photo du plat
 	 * @param nom Nom du plat
 	 */
-	public Plat(String descriptif, String ingrédients, float prix, String url, String nom) {
-		this.descriptif = descriptif;
-		this.ingrédients = ingrédients;
-		this.prix = prix;
-		this.url = url;
-		this.nom = nom;
+	public Plat(String descriptif, String ingredients, float prix, String url, String nom) {
+		setDescriptif(descriptif);
+		setIngredients(ingredients);
+		setPrix(prix);
+		setUrl(url);
+		setNom(nom);
 	}
 
 	/**
@@ -69,15 +69,15 @@ public class Plat {
 	/**
 	 * @return the ingrédients
 	 */
-	public String getIngrédients() {
-		return ingrédients;
+	public String getIngredients() {
+		return this.ingredients;
 	}
 
 	/**
 	 * @param ingrédients the ingrédients to set
 	 */
-	public void setIngrédients(String ingrédients) {
-		this.ingrédients = ingrédients;
+	public void setIngredients(String ingredients) {
+		this.ingredients = ingredients;
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class Plat {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Plat [id=").append(id).append(", descriptif=").append(descriptif).append(", ingrédients=")
-				.append(ingrédients).append(", prix=").append(prix).append(", url=").append(url).append(", nom=")
+				.append(ingredients).append(", prix=").append(prix).append(", url=").append(url).append(", nom=")
 				.append(nom).append("]");
 		return builder.toString();
 	}
