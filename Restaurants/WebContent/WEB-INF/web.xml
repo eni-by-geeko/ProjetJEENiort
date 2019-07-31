@@ -13,6 +13,11 @@
   <servlet>
   	<servlet-name>Accueil</servlet-name>
   	<jsp-file>/WEB-INF/jsp/Gestion_Interne/Accueil.html</jsp-file>
+  	<init-param>
+        <param-name>id</param-name>
+        <param-value>3</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
   	<servlet-name>Accueil</servlet-name>

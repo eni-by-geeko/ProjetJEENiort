@@ -1,7 +1,7 @@
 package fr.restaurants.bo;
 
 public class Tables {
-
+private int id;
 private int numero;
 private String statut;
 
@@ -24,6 +24,12 @@ public String getStatut() {
 }
 public void setStatut(String statut) {
 	this.statut = statut;
+}
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
 }
 
 }

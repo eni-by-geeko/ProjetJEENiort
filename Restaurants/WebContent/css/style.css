@@ -4,3 +4,10 @@
 	margin:20px;
 	float:left;	
 }
+.tableResto>div {
+	height:200px;
+	width :200px;
+	margin:20px;
+	float:right;	
+	top:50%;
+}
