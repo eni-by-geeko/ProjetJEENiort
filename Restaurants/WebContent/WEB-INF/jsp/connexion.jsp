@@ -4,16 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>connexion</title>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 </head>
 <body>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
+<jsp:include page="navBar.jsp"></jsp:include>
 
 <div class="container">
 <br>  <p class="text-center">Page de connexion à votre compte </p>
@@ -26,15 +27,15 @@
 <article class="card-body">
 
 <h4 class="card-title mb-4 mt-1">Connexion</h4>
-	 <form>
+	 <form method= "post" action = "<%= request.getContextPath()%>/connexion">
     <div class="form-group">
     	<label>Votre adresse mail :</label>
-        <input name="" class="form-control" placeholder="Email" type="email">
+        <input name="email" class="form-control" placeholder="Email" type="email">
     </div> <!-- form-group// -->
     <div class="form-group">
     	<a class="float-right" href="#">Mot de passe oublié ?</a>
     	<label>Votre mot de passe</label>
-        <input class="form-control" placeholder="******" type="password">
+        <input class="form-control" name="password" placeholder="******" type="password">
     </div> <!-- form-group// --> 
     <div class="form-group"> 
     <div class="checkbox">
@@ -50,5 +51,8 @@
 
 	</aside> <!-- col.// -->
 	<aside class="col-sm-4">
+	
+<jsp:include page="scriptJS.jsp"></jsp:include>	
+	
 </body>
 </html>
