@@ -18,6 +18,12 @@ public class Plat {
 	 private String nom;
 	 
 	/**
+	 *  Empty constructor for src/dal/PlatsDAOJdbcImpl 
+	 */
+	public Plat() {}
+	
+
+	/**
 	 * @param descriptif Déscription du plat affiché sous le carrousel
 	 * @param ingrédients Liste des ingrédients en chaîne de caractère
 	 * @param prix Prix du plat

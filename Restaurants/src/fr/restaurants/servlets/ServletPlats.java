@@ -32,12 +32,12 @@ public class ServletPlats extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		/**
+		 *  suite des travaux: installer la librairie sqljdbc42.jar dans la bonne librairie
+		 * 
+		 */
 		
-		/*
-		// Stockage de l'information pour la jsp
-		request.setAttribute("repas", repas);
-		
-		*/
 		//Récupère les infos de la db
 		PlatsManager pm = new PlatsManager();
 		List<Plat> listePlats = pm.selectAll();

@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +20,7 @@
 		<h2 class="text-center text-white">Nos plats</h2>
 	</div>
 </header>
+
 <div class="container-item mt-3">
 	<div class="row">
 		<div class="col-lg-6 offset-lg-3">
