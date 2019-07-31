@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,15 +7,13 @@
 
 <title>Nos plats</title>
 
+<style> body {background-color: black;} img {height:500px; border-radius:15px;} </style>
+
 <!--  Bootstrap  -->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
-
-<style> body {background-color: black;} img {height:500px; border-radius:15px;} h1, h2 {color: white;} </style>
-
 </head>
 <body>
-
 	<jsp:include page="navBar.jsp"></jsp:include>
 
 	<header class="row">
