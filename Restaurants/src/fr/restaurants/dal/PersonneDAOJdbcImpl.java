@@ -10,8 +10,9 @@ import fr.restaurants.bo.Personne;
 
 public class PersonneDAOJdbcImpl implements PersonneDAO {
 
-	private static final String SELECT_BY_EMAIL = "SELECT mail, Mot_De_Passe from Personnes WHERE mail= ?";
-
+	private static final String SELECT_BY_EMAIL = "SELECT mail, Mot_De_Passe, statut from Personnes WHERE mail= ?";
+	
+	
 	@Override
 	public Personne getByEmail(String email) {
 		
