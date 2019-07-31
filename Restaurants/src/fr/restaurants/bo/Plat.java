@@ -3,16 +3,16 @@ package fr.restaurants.bo;
 /**
  * @author Marc L. Harnist
  * 
- * Objet plat, affiché dans la page "Nos plats", plats.jsp et modifié
+ * Objet plat, affichï¿½ dans la page "Nos plats", plats.jsp et modifiï¿½
  * dans la page "Ajouter un plat"
- * Les attributs sont enregistrés dans la base de donnée
+ * Les attributs sont enregistrï¿½s dans la base de donnï¿½e
  *
  */
 public class Plat { 
 	
 	 private int id ;
 	 private String descriptif;
-	 private String ingredients; // Si temps dispo: créer class Ingredients
+	 private String ingredients;
 	 private float prix;
 	 private String url; // url de l'image: photo du plat
 	 private String nom;
@@ -24,8 +24,8 @@ public class Plat {
 	
 
 	/**
-	 * @param descriptif Déscription du plat affiché sous le carrousel
-	 * @param ingredients Liste des ingrédients en chaîne de caractère
+	 * @param descriptif Dï¿½scription du plat affichï¿½ sous le carrousel
+	 * @param ingrï¿½dients Liste des ingrï¿½dients en chaï¿½ne de caractï¿½re
 	 * @param prix Prix du plat
 	 * @param uRL Adresse de l'image, photo du plat
 	 * @param nom Nom du plat
@@ -67,14 +67,14 @@ public class Plat {
 	}
 
 	/**
-	 * @return the ingrédients
+	 * @return the ingrï¿½dients
 	 */
 	public String getIngredients() {
 		return this.ingredients;
 	}
 
 	/**
-	 * @param ingrédients the ingrédients to set
+	 * @param ingrï¿½dients the ingrï¿½dients to set
 	 */
 	public void setIngredients(String ingredients) {
 		this.ingredients = ingredients;
@@ -128,7 +128,7 @@ public class Plat {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Plat [id=").append(id).append(", descriptif=").append(descriptif).append(", ingrédients=")
+		builder.append("Plat [id=").append(id).append(", descriptif=").append(descriptif).append(", ingredients=")
 				.append(ingredients).append(", prix=").append(prix).append(", url=").append(url).append(", nom=")
 				.append(nom).append("]");
 		return builder.toString();
