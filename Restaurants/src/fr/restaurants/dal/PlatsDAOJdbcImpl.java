@@ -25,7 +25,7 @@ public class PlatsDAOJdbcImpl implements PlatDAO {
 				Plat plat = new Plat();
 				plat.setId(rs.getInt(1));
 				plat.setDescriptif(rs.getString(2));
-				plat.setIngrédients(rs.getString(3));
+				plat.setIngredients(rs.getString(3));
 				plat.setPrix(rs.getFloat(4));
 				plat.setUrl(rs.getString(5));
 				plat.setNom(rs.getString(6));

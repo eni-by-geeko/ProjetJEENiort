@@ -14,83 +14,52 @@
 
 </head>
 <body>
-	<jsp:include page="navBar.jsp"></jsp:include>
 
-	<header class="row">
-		<div class="col-lg-12 mt-3">
-			<h1 class="text-center">101 Recettes Gourmandes</h1>
-			<h2 class="text-center">Nos plats</h2>
-		</div>
-	</header>
-		
-	<!-- ############################ ZONE TEST A SUPPRIMER A LA FIN DES TEST ######################### -->
-	<section class="text-danger">
-		<h3>Test d'affichage liste de plat</h3>
-		<ol>
-			<li>Li test</li>
-		<c:forEach var="plat" items="${listePlats}">
-			<li  class="text-danger">
-				${plat.toString()}
-			</li>
-		</c:forEach>
-		</ol>
-	</section>
-	<!-- ############################# FIN ---- ZONE TEST A SUPPRIMER A LA FIN DES TEST ################# -->
+<jsp:include page="navBar.jsp"></jsp:include>
+
+<header class="row">
+	<div class="col-lg-12 mt-3">
+		<h1 class="text-center">101 Recettes Gourmandes</h1>
+		<h2 class="text-center">Nos plats</h2>
+	</div>
+</header>
 	
-	<div class="container-item mt-3">
-		<div class="row">
-			<div class="col-lg-6 offset-lg-3">
-				<div class="carousel slide" id="carousel-564796">
-					<ol class="carousel-indicators">
-						<li data-slide-to="0" data-target="#carousel-564796" class="active">
-						</li>
-						<li data-slide-to="1" data-target="#carousel-564796">
-						</li>
-						<li data-slide-to="2" data-target="#carousel-564796">
-						</li>
-					</ol>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img class="d-block w-100" alt="Plat n°1 PlatN1.jpg" src="${pageContext.request.contextPath}/img/PlatN1.jpg" />
+<!-- ############################ ZONE TEST A SUPPRIMER A LA FIN DES TEST ######################### -->
+<%-- //Delete this line to active the code below
+ <c:forEach var="plat" items="${listePlats}">
+		 - ${plat.toString()}<br>
+</c:forEach>
+//Delete this line if code above active --%>
+<!-- ############################# FIN ZONE TEST ################################################### -->
+
+<div class="container-item mt-3">
+	<div class="row">
+		<div class="col-lg-6 offset-lg-3">
+			<div class="carousel slide" id="carousel-564796">
+				<ol class="carousel-indicators">
+					<c:forEach var="plat" items="${listePlats}">
+						<li data-slide-to="${plat.getId()}" data-target="#carousel-564796" class="<c:if test='${plat.getId() == 1}'>active</c:if>"></li>
+					</c:forEach>
+				</ol>
+
+				<div class="carousel-inner">
+					<!-- La première image doit être nommée "active" pour le framework Bootstrap -->
+					<c:forEach var="plat" items="${listePlats}">
+						<div class="carousel-item <c:if test='${plat.getId() == 1}'>active</c:if>">
+							<img class="d-block w-100" alt="Plat n°${plat.getId()} src:PlatN${plat.getId()}.jpg"
+									src="${pageContext.request.contextPath}/img/PlatN${plat.getId()}.jpg" />
 							<div class="carousel-caption">
-								<h4>
-									Plat 1
-								</h4>
-								<p>
-										Description plat 1
-								</p>
+								<h4>${plat.getNom()}</h4>
+								<p>${plat.getDescriptif()}</p>
+								<p><%-- ${plat.getIngredients()} --%></p>
 							</div>
 						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100" alt="Carousel Bootstrap Second" src="${pageContext.request.contextPath}/img/PlatN2.jpg" />
-							<div class="carousel-caption">
-								<h4>
-									Plat 2
-								</h4>
-								<p>
-										Description plat 2
-								</p>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<img class="d-block w-100" alt="Carousel Bootstrap Third" src="${pageContext.request.contextPath}/img/PlatN3.jpg" />
-							<div class="carousel-caption">
-								<h4>
-									Plat 3
-								</h4>
-								<p>
-										Description plat 3
-								</p>
-							</div>
-						</div>
-					</div> <a class="carousel-control-prev" href="#carousel-564796" data-slide="prev"><span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" href="#carousel-564796" data-slide="next"><span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
-				</div>
+					</c:forEach>	
+				</div> <a class="carousel-control-prev" href="#carousel-564796" data-slide="prev"><span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" href="#carousel-564796" data-slide="next"><span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
 			</div>
 		</div>
 	</div>
-
-	<jsp:include page="scriptJS.jsp"></jsp:include>
-	
-
+</div>
+<jsp:include page="scriptJS.jsp"></jsp:include>
 </body>
 </html>

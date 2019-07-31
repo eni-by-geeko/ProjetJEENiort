@@ -28,6 +28,4 @@
 	<servlet-name>NavBar</servlet-name>
 	<url-pattern>/Essai_navBar</url-pattern>
   </servlet-mapping>
-  
-
 </web-app>

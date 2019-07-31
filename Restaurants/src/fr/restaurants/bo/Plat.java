@@ -25,17 +25,17 @@ public class Plat {
 
 	/**
 	 * @param descriptif Déscription du plat affiché sous le carrousel
-	 * @param ingrédients Liste des ingrédients en chaîne de caractère
+	 * @param ingredients Liste des ingrédients en chaîne de caractère
 	 * @param prix Prix du plat
 	 * @param uRL Adresse de l'image, photo du plat
 	 * @param nom Nom du plat
 	 */
-	public Plat(String descriptif, String ingrédients, float prix, String url, String nom) {
-		this.descriptif = descriptif;
-		this.ingredients = ingrédients;
-		this.prix = prix;
-		this.url = url;
-		this.nom = nom;
+	public Plat(String descriptif, String ingredients, float prix, String url, String nom) {
+		setDescriptif(descriptif);
+		setIngredients(ingredients);
+		setPrix(prix);
+		setUrl(url);
+		setNom(nom);
 	}
 
 	/**
@@ -69,15 +69,15 @@ public class Plat {
 	/**
 	 * @return the ingrédients
 	 */
-	public String getIngrédients() {
-		return ingredients;
+	public String getIngredients() {
+		return this.ingredients;
 	}
 
 	/**
 	 * @param ingrédients the ingrédients to set
 	 */
-	public void setIngrédients(String ingrédients) {
-		this.ingredients = ingrédients;
+	public void setIngredients(String ingredients) {
+		this.ingredients = ingredients;
 	}
 
 	/**

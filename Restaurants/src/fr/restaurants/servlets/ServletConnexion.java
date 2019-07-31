@@ -78,7 +78,7 @@ public void init() throws ServletException {
 					HttpSession session = request.getSession();
 					session.setAttribute("statut", personne.getStatut());
 					
-					RequestDispatcher rd = request.getRequestDispatcher("/ServletAccueil");
+					RequestDispatcher rd = request.getRequestDispatcher("/accueil");
 					rd.forward(request, response);					
 				}
 				else {
@@ -90,7 +90,7 @@ public void init() throws ServletException {
 			}
 		if (tentative==3) {
 			tentative=0;
-			RequestDispatcher rd = request.getRequestDispatcher("/ServletInscription");
+			RequestDispatcher rd = request.getRequestDispatcher("/Inscription");
 			rd.forward(request, response);
 		}
 				 
