@@ -12,7 +12,7 @@ public class Plat {
 	
 	 private int id ;
 	 private String descriptif;
-	 private String ingrédients; // Si temps dispo: créer class Ingredients
+	 private String ingredients; // Si temps dispo: créer class Ingredients
 	 private float prix;
 	 private String url; // url de l'image: photo du plat
 	 private String nom;
@@ -32,7 +32,7 @@ public class Plat {
 	 */
 	public Plat(String descriptif, String ingrédients, float prix, String url, String nom) {
 		this.descriptif = descriptif;
-		this.ingrédients = ingrédients;
+		this.ingredients = ingrédients;
 		this.prix = prix;
 		this.url = url;
 		this.nom = nom;
@@ -70,14 +70,14 @@ public class Plat {
 	 * @return the ingrédients
 	 */
 	public String getIngrédients() {
-		return ingrédients;
+		return ingredients;
 	}
 
 	/**
 	 * @param ingrédients the ingrédients to set
 	 */
 	public void setIngrédients(String ingrédients) {
-		this.ingrédients = ingrédients;
+		this.ingredients = ingrédients;
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class Plat {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Plat [id=").append(id).append(", descriptif=").append(descriptif).append(", ingrédients=")
-				.append(ingrédients).append(", prix=").append(prix).append(", url=").append(url).append(", nom=")
+				.append(ingredients).append(", prix=").append(prix).append(", url=").append(url).append(", nom=")
 				.append(nom).append("]");
 		return builder.toString();
 	}
