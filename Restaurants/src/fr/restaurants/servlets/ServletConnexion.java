@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.restaurants.bll.PersonneManager;
 import fr.restaurants.bo.Personne;
@@ -36,9 +37,22 @@ public void init() throws ServletException {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		session.setMaxInactiveInterval(60*10);
+		int compteurAccesPendantSession=0;
+		if(session.getAttribute("compteurAcces")!=null) 
+		{
+			compteurAccesPendantSession=(int)session.getAttribute("compteurAcces");
+		}
+		compteurAccesPendantSession+=1;
+		session.setAttribute("compteurAcces", compteurAccesPendantSession);
+		
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
 		rd.forward(request, response);
 	}
+		
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -60,7 +74,9 @@ public void init() throws ServletException {
 				
 			} else {
 				
-				if (password.equals (personne.getPassword())) {
+				if (password.equals(personne.getPassword())) {
+					HttpSession session = request.getSession();
+					session.setAttribute("statut", personne.getStatut());
 					
 					RequestDispatcher rd = request.getRequestDispatcher("/ServletAccueil");
 					rd.forward(request, response);					

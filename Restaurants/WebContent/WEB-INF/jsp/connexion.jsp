@@ -27,7 +27,7 @@
 <article class="card-body">
 
 <h4 class="card-title mb-4 mt-1">Connexion</h4>
-	 <form method= "post" action = "<%= request.getContextPath()%>/connexion">
+	 <form method= "POST" action = "<%= request.getContextPath()%>/connexion">
     <div class="form-group">
     	<label>Votre adresse mail :</label>
         <input name="email" class="form-control" placeholder="Email" type="email">
