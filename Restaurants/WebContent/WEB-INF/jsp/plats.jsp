@@ -52,6 +52,7 @@
 								<h4>${plat.getNom()}</h4>
 								<p>${plat.getDescriptif()}</p>
 								<p><%-- ${plat.getIngredients()} --%></p>
+								<p>${plat.getIngredients()}</p>
 							</div>
 						</div>
 					</c:forEach>	
