@@ -9,6 +9,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+
+  <servlet>
+  	<servlet-name>Accueil</servlet-name>
+  	<jsp-file>/WEB-INF/jsp/Gestion_Interne/Accueil.html</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Accueil</servlet-name>
+  	<url-pattern>/Accueil</url-pattern>
+  </servlet-mapping>
+
   
   <servlet>
 	<servlet-name>NavBar</servlet-name>
@@ -19,4 +29,5 @@
 	<url-pattern>/Essai_navBar</url-pattern>
   </servlet-mapping>
   
+
 </web-app>
