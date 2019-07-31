@@ -25,7 +25,6 @@ public class ServletPlats extends HttpServlet {
      */
     public ServletPlats() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
@@ -37,7 +36,6 @@ public class ServletPlats extends HttpServlet {
 		 *  suite des travaux: installer la librairie sqljdbc42.jar dans la bonne librairie
 		 * 
 		 */
-		
 		//Récupère les infos de la db
 		PlatsManager pm = new PlatsManager();
 		List<Plat> listePlats = pm.selectAll();

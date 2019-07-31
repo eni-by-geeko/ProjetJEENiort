@@ -15,13 +15,7 @@ public class PlatsManager {
 		
 	}
 
-	/* MODELE 
-	public Plat inserer( dateRepas, LocalTime timeRepas) {
-		Repas repas = new Repas(dateRepas, timeRepas);
-		repasDao.insert(repas);
-		return repas;
-	}
-	*/
+
 	public List<Plat> selectAll(){
 		List<Plat> listeDesPlats = platDAO.selectAll();
 		
