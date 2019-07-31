@@ -20,7 +20,7 @@ nav {
 </style>
 
 	<c:choose>
-		<c:when test="${value==1}"> 			<!-- NAV BAR ADMINISTRATEUR-->
+		<c:when test="${statut=='admin'}"> 			<!-- NAV BAR ADMINISTRATEUR-->
 				<nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
 				  <a class="navbar-brand" href="${pageContext.request.contextPath}/accueil">Accueil</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
@@ -55,7 +55,7 @@ nav {
 				</nav>
 	
 		</c:when>
-		<c:when test="${value==2}"> 			<!-- NAV BAR CLIENT--> 
+		<c:when test="${statut=='client'}"> 			<!-- NAV BAR CLIENT--> 
 				<nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
 				  <a class="navbar-brand" href="${pageContext.request.contextPath}/accueil">Accueil</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
