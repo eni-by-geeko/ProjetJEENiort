@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +28,10 @@
 <div class="card">
 <article class="card-body">
 
+${erreur}
+
 <h4 class="card-title mb-4 mt-1">Connexion</h4>
-	 <form method= "post" action = "<%= request.getContextPath()%>/connexion">
+	 <form method= "POST" action = "<%= request.getContextPath()%>/connexion">
     <div class="form-group">
     	<label>Votre adresse mail :</label>
         <input name="email" class="form-control" placeholder="Email" type="email">

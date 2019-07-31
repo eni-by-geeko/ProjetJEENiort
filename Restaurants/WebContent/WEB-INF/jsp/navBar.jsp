@@ -20,7 +20,7 @@ nav {
 </style>
 
 	<c:choose>
-		<c:when test="${value==1}"> 			<!-- NAV BAR ADMINISTRATEUR-->
+		<c:when test="${statut=='admin'}"> 			<!-- NAV BAR ADMINISTRATEUR-->
 				<nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
 				  <a class="navbar-brand" href="${pageContext.request.contextPath}/accueil">Accueil</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
@@ -55,7 +55,7 @@ nav {
 				</nav>
 	
 		</c:when>
-		<c:when test="${value==2}"> 			<!-- NAV BAR CLIENT--> 
+		<c:when test="${statut=='client'}"> 			<!-- NAV BAR CLIENT--> 
 				<nav class="mb-1 navbar navbar-expand-lg navbar-dark primary-color">
 				  <a class="navbar-brand" href="${pageContext.request.contextPath}/accueil">Accueil</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
@@ -79,7 +79,7 @@ nav {
 				        <div class="dropdown-menu dropdown-menu-right dropdown-default"
 				          aria-labelledby="navbarDropdownMenuLink-333">
 				          <a class="dropdown-item" href="${pageContext.request.contextPath}/compte">Mon compte</a>
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/compte">Se déconnecter</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/accueil">Se déconnecter</a>
 				        </div>
 				      </li>
 				    </ul>
@@ -113,7 +113,7 @@ nav {
 				        <div class="dropdown-menu dropdown-menu-right dropdown-default"
 				          aria-labelledby="navbarDropdownMenuLink-333">
 				          <a class="dropdown-item" href="${pageContext.request.contextPath}/connexion">Se connecter</a>
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/Inscription">S'inscrire</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/inscription">S'inscrire</a>
 				        </div>
 				      </li>
 				    </ul>
