@@ -22,6 +22,21 @@
 			<h2 class="text-center">Nos plats</h2>
 		</div>
 	</header>
+		
+	<!-- ############################ ZONE TEST A SUPPRIMER A LA FIN DES TEST ######################### -->
+	<section class="text-danger">
+		<h3>Test d'affichage liste de plat</h3>
+		<ol>
+			<li>Li test</li>
+		<c:forEach var="plat" items="${listePlats}">
+			<li  class="text-danger">
+				${plat.toString()}
+			</li>
+		</c:forEach>
+		</ol>
+	</section>
+	<!-- ############################# FIN ---- ZONE TEST A SUPPRIMER A LA FIN DES TEST ################# -->
+	
 	<div class="container-item mt-3">
 		<div class="row">
 			<div class="col-lg-6 offset-lg-3">
