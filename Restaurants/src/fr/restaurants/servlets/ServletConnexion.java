@@ -61,12 +61,13 @@ public void init() throws ServletException {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		RequestDispatcher rd = null;
-		// Recuperation des données
+		// Recuperation des donnï¿½es
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		// Transaction avec la base de données
+		// Transaction avec la base de donnï¿½es
 		Personne personne=null;
 		PersonneManager pm =new PersonneManager(); 
 		personne= pm.getByEmail(email);
@@ -103,6 +104,7 @@ public void init() throws ServletException {
 			rd = request.getRequestDispatcher("/inscription");
 
 		}
+
 		if (rd == null)
 			rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
 		rd.forward(request, response);
