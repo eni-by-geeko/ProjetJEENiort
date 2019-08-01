@@ -23,9 +23,9 @@
 <hr>
 
 <div class="row">
-	<aside class="col-sm-4">
+	<aside class="col-sm-4  ">
 <p>Merci de remplir les champs suivants :</p>
-<div class="card">
+<div class="card" >
 <article class="card-body">
 
 ${erreur}
