@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 <title>Nos plats</title>
 
@@ -101,6 +101,7 @@
 								<h4>${plat.getNom()}</h4>
 								<p>${plat.getDescriptif()}</p>
 								<p><%-- ${plat.getIngredients()} --%></p>
+								<p>${plat.getIngredients()}</p>
 							</div>
 						</div>
 					</c:forEach>	

@@ -1,6 +1,7 @@
 package fr.restaurants.servlets;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,7 +17,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/accueil")
 public class ServletAccueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	public static Logger logger = Logger.getLogger("Test");
+	
     /**
      * Default constructor. 
      */
@@ -32,7 +34,7 @@ public class ServletAccueil extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/accueil.jsp");
 		rd.forward(request, response);
-		
+		logger.info("Début de l'application");
 	}
 
 	/**
