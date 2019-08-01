@@ -61,7 +61,7 @@ public void init() throws ServletException {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
+		RequestDispatcher rd = null;
 		// Recuperation des données
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -84,8 +84,9 @@ public void init() throws ServletException {
 					HttpSession session = request.getSession();
 					session.setAttribute("statut", personne.getStatut());
 
-					RequestDispatcher rd = request.getRequestDispatcher("/accueil");
-					rd.forward(request, response);					
+
+					rd = request.getRequestDispatcher("/accueil");
+
 				}
 				else {
 					
@@ -98,13 +99,13 @@ public void init() throws ServletException {
 		if (tentative==3) {
 			tentative=0;
 
-			RequestDispatcher rd = request.getRequestDispatcher("/inscription");
 
-			rd.forward(request, response);
+			rd = request.getRequestDispatcher("/inscription");
+
 		}
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
-		rd.forward(request, response);		
+		if (rd == null)
+			rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
+		rd.forward(request, response);
 		
 	}
 	

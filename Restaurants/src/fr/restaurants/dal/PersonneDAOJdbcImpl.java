@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 import fr.restaurants.bo.Personne;
 
@@ -47,6 +48,9 @@ public class PersonneDAOJdbcImpl implements PersonneDAO {
 		}
 		return null;
 	}
+
+	public static Logger logger = Logger.getLogger("Test");
+
 	
 	@Override
 	public Personne getByEmail(String email) {
@@ -70,7 +74,7 @@ public class PersonneDAOJdbcImpl implements PersonneDAO {
 			
 		} catch (SQLException e) {
 			
-			e.printStackTrace();
+			logger.severe("Crash en vue : "+ e.getMessage());
 		}
 		
 		
