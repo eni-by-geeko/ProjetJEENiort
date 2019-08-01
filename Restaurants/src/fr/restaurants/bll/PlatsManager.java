@@ -29,7 +29,7 @@ public class PlatsManager {
 	public void insererMultiple(int idRepas, List<Ingredients> ingredients) {
 		for(Ingredients ingredient : ingredients) {
 			ingredientsDao.insert(ingredient);
-			ingredientsDao.associer(idRepas, ingredient.getId());
+			//ingredientsDao.associer(idRepas, ingredient.getId());
 		}
 	}
 	public List<Plat> selectAll(){
