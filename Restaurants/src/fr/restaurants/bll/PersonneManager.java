@@ -23,6 +23,17 @@ public class PersonneManager {
 		
 		
 	}
-	
-	
+
+	public Personne ajouter(String statut, String nom, String prenom, int tel, String mail, String commentaire, String password) {
+		Personne personne = new Personne(statut, nom, prenom, tel, mail, commentaire, password);
+		return personne;
+	}
+
+	/**
+	 * @param personneInsert renseignée dans la page inscription.jsp puis ServletInscription
+	 * @return reponse sql: insert
+	 */
+	public Personne insert(Personne personneInsert) {
+		return this.personneDAO.insert(personneInsert);
+	}
 }

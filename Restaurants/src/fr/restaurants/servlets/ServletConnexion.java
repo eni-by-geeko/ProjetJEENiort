@@ -28,6 +28,7 @@ public class ServletConnexion extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
 @Override
 public void init() throws ServletException {
 	 tentative = 0;
@@ -83,7 +84,9 @@ public void init() throws ServletException {
 					HttpSession session = request.getSession();
 					session.setAttribute("statut", personne.getStatut());
 
+
 					rd = request.getRequestDispatcher("/accueil");
+
 				}
 				else {
 					
@@ -96,7 +99,9 @@ public void init() throws ServletException {
 		if (tentative==3) {
 			tentative=0;
 
+
 			rd = request.getRequestDispatcher("/inscription");
+
 		}
 		if (rd == null)
 			rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");

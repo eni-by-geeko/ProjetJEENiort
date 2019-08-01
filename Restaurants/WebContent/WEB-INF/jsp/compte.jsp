@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+
 <title>compte</title>
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 
-
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <body>
 
 <jsp:include page="navBar.jsp"></jsp:include>
@@ -20,7 +22,8 @@
       <div class="col-md-6 mx-auto text-center">
          <div class="header-title">
             <h1 class="wv-heading--title">
-               Mon Compte
+               Mon Compte: ${statut}
+               
             </h1>
             <h5 class="wv-heading--subtitle mb-4">
                Une erreur ? Pas de souci : nom, prénom, mail, mot de passe, faites vos changements et validez !
