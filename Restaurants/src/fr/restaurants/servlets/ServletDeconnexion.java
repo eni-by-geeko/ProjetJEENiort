@@ -11,16 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class accueil
+ * Servlet implementation class ServletDeconnexion
  */
-@WebServlet("/accueil")
-public class ServletAccueil extends HttpServlet {
+@WebServlet("/ServletDeconnexion")
+public class ServletDeconnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public ServletAccueil() {
+    public ServletDeconnexion() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -29,9 +30,12 @@ public class ServletAccueil extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession session = request.getSession();
+		session.invalidate() ;
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/accueil.jsp");
 		rd.forward(request, response);
+		
 		
 	}
 
@@ -39,11 +43,6 @@ public class ServletAccueil extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		
-		
-		
-		
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
