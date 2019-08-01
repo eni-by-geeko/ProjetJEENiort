@@ -10,8 +10,8 @@ import fr.restaurants.bo.Ingredients;
 
 public class IngredientsDAOJdbcImpl implements IngredientsDAO {
 	
-	private static final String INSERT = "INSERT INTO ingredients(Nom) VALUES(?);";
-	private static final String ASSOCIATION = "INSERT INTO asso_plat_ingredient(id_plat, id_ingredient) VALUES(?,?);";
+	private static final String INSERT = "INSERT INTO ingredients(Nom_Ingredient) VALUES(?);";
+	private static final String ASSOCIATION = "INSERT INTO asso_plat_ingredient(ID_plat, ID_ingredients) VALUES(?,?);";
 	private static final String SELECT_BY_PLAT_ID = "SELECT ali.nom FROM asso_plat_ingredients api, ingredients ali WHERE api.id_plat = ? AND ara.id_ingredient=ali.id;";
 	
 	public void insert(Ingredients ingredients) {

@@ -34,7 +34,7 @@ nav {
 				          aria-haspopup="true" aria-expanded="false">Nos Plats
 				        </a>
 				        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-				          <a class="dropdown-item" href="#">Ajouter plat</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/ajouterPlat">Ajouter plat</a>
 				        </div>
 				      </li>
 				    </ul>
