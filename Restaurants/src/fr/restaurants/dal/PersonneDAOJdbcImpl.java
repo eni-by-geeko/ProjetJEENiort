@@ -11,7 +11,8 @@ import fr.restaurants.bo.Personne;
 public class PersonneDAOJdbcImpl implements PersonneDAO {
 
 	private static final String SELECT_BY_EMAIL = "SELECT mail, Mot_De_Passe, statut from Personnes WHERE mail= ?";
-	private static final String INSERT = "INSERT INTO Personnes () values ()";
+	private static final String INSERT = "INSERT INTO Personnes (ID_Personnes, Statut, Nom, Prenom, Tel, Mail, Commentaire, Mot_De_Passe)"
+			                           + " values (?,?,?,?,?,?,?,?)";
 	
 	
 	@Override
