@@ -25,6 +25,8 @@ hr:after {
 
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 h1.pacifico{font-family: 'Pacifico', cursive;}
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker&display=swap');
+h3.permanentmarker {font-family: 'Permanent Marker', cursive;}
 
 </style>
 
@@ -39,8 +41,8 @@ h1.pacifico{font-family: 'Pacifico', cursive;}
 
 <article class="row">
 	<header class="col-lg-12 m-5">
-		<h1 class="pacifico text-center">101 Recettes Gourmandes</h1>
-		<h3 class="text-center"> Prenez votre temps et profitez de cet instant, on s'occupe de vous. </h3>
+		<h1 class="pacifico text-center ">101 Recettes Gourmandes</h1>
+		<h3 class="permanentmarker text-center"> Prenez votre temps et profitez de cet instant, on s'occupe de vous. </h3>
 		<hr>
 	</header>
 	<section class="col-lg-4 offset-lg-2">
