@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.restaurants.bll.PersonneManager;
+import fr.restaurants.bo.Personne;
+
 /**
  * Servlet implementation class Inscription
  */
@@ -36,8 +39,24 @@ public class ServletInscription extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+
+		//Get form data
+		//int id_personnes = request.getParameter(""); //NOT USED IN DB auto-incrementation
+		String statut = "client";
+		String nom = request.getParameter("name");
+		String prenom = request.getParameter("prenom");
+		int tel = 0; // Remplacé par 0 ici.
+		String mail = request.getParameter("email");
+		String commentaire = request.getParameter("commentaire");
+		String password = request.getParameter("password");		
+		
+		//Prepare db et insert Personne dans la table Personnes
+		PersonneManager pm = new PersonneManager();
+		Personne personneInsert = pm.ajouter(statut, nom, prenom, tel, mail, commentaire, password);
+		pm.insert(personneInsert);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/accueil");
+		rd.forward(request, response);
 	}
 
 }
