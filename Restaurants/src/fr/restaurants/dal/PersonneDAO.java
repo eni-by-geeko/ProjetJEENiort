@@ -6,4 +6,5 @@ public interface PersonneDAO {
 
 	public Personne getByEmail (String email);
 	public Personne insert(Personne personne);
+	public Personne getAllByEmail(String email);
 }

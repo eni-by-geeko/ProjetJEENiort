@@ -17,6 +17,7 @@ import fr.restaurants.bo.Personne;
 public class PersonneDAOJdbcImpl implements PersonneDAO {
 
 	private static final String SELECT_BY_EMAIL = "SELECT mail, Mot_De_Passe, statut from Personnes WHERE mail= ?";
+	private static final String SELECT_ALL_BY_EMAIL = "SELECT  Statut, Nom, Prenom, Tel, Mail, Commentaire, Mot_De_Passe from Personnes WHERE mail= ?";
 	private static final String INSERT = "INSERT INTO Personnes (Statut, Nom, Prenom, Tel, Mail, Commentaire, Mot_De_Passe) values (?,?,?,?,?,?,?)";
 	/**
 	 * @param personne Ajout d'une personne dans la base de donnée par Marc
@@ -76,9 +77,37 @@ public class PersonneDAOJdbcImpl implements PersonneDAO {
 			
 			logger.severe("Crash en vue : "+ e.getMessage());
 		}
+		return personne;
+	}
+	
+	public Personne getAllByEmail(String email) {
 		
+		Personne personne = new Personne ();
+		
+		try (Connection cnx = ConnectionProvider.getConnection ()){
+			
+			PreparedStatement pstmt = cnx.prepareStatement(SELECT_ALL_BY_EMAIL);
+			pstmt.setString(1, email);
+			ResultSet rs  = pstmt.executeQuery();
+			
+			if(rs.next())
+			{
+				// Get Statut, Nom, Prenom, Tel, Mail, Commentaire, Mot_De_Passe from db 
+				// and create object Personne
+				personne.setStatut(rs.getString(1));
+				personne.setNom(rs.getString(2));
+				personne.setPrenom(rs.getString(3));
+				personne.setTel(rs.getInt(4));
+				personne.setMail(rs.getString(5));
+				personne.setCommentaire(rs.getString(6));
+				personne.setPassword(rs.getString(7));
+			}
+			
+		} catch (SQLException e) {
+			
+			logger.severe("Crash en vue : "+ e.getMessage());
+		}
 		
 		return personne;
 	}
-
 }

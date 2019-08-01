@@ -22,7 +22,7 @@
       <div class="col-md-6 mx-auto text-center">
          <div class="header-title">
             <h1 class="wv-heading--title">
-               Mon Compte: ${statut}
+               Mon Compte:<br>
                
             </h1>
             <h5 class="wv-heading--subtitle mb-4">
@@ -35,16 +35,16 @@
             <div class="myform form ">
                <form action="" method="post" name="login">
                   <div class="form-group">
-                     <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nom">
+                     <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nom" value="${personne.getNom()}" >
                   </div>
                    <div class="form-group">
-                     <input type="text" name="prenom"  class="form-control my-input" id="prenom" placeholder="Prénom">
+                     <input type="text" name="prenom"  class="form-control my-input" id="prenom" placeholder="Prénom" value="${personne.getPrenom()}" >
                   </div>
                   <div class="form-group">
-                     <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email">
+                     <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email"  value="${personne.getMail()}" >
                   </div>
                   <div class="form-group">
-                     <input type="password"  name="password" id="password"  class="form-control my-input" placeholder="Mot de passe">
+                     <input type="text"  name="password" id="password"  class="form-control my-input" placeholder="Mot de passe" value="${personne.getPassword()}" >
                   </div>
                   <div class="form-group">
                      <input type="password"  name="password" id="password"  class="form-control my-input" placeholder="Confirmez votre mot de passe">

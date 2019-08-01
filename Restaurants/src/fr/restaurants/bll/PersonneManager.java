@@ -19,9 +19,11 @@ public class PersonneManager {
 	public Personne getByEmail (String email) {
 		
 		return this.personneDAO.getByEmail (email);
-		
-		
-		
+	}
+
+	
+	public Personne getAllByEmail(String email) {
+		return this.personneDAO.getAllByEmail (email);
 	}
 
 	public Personne ajouter(String statut, String nom, String prenom, int tel, String mail, String commentaire, String password) {
