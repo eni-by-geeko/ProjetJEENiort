@@ -1,6 +1,7 @@
 package fr.restaurants.servlets;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +17,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ServletDeconnexion")
 public class ServletDeconnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	public static Logger logger = Logger.getLogger("Test");
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,6 +37,7 @@ public class ServletDeconnexion extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/accueil.jsp");
 		rd.forward(request, response);
+		logger.info("Fin de l'application");
 		
 		
 	}
