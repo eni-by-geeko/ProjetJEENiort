@@ -32,22 +32,22 @@
             <div class="myform form ">
                <form action="" method="post" name="login">
                   <div class="form-group">
-                     <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nom">
+                     <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nom" value="Doe">
                   </div>
                    <div class="form-group">
-                     <input type="text" name="prenom"  class="form-control my-input" id="prenom" placeholder="Prénom">
+                     <input type="text" name="prenom"  class="form-control my-input" id="prenom" placeholder="Prénom" value="John">
                   </div>
                   <div class="form-group">
-                     <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email">
+                     <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email" value="john.doe@mars.com">
                   </div>
                   <div class="form-group">
-                     <input type="password"  name="password" id="password"  class="form-control my-input" placeholder="Mot de passe">
+                     <input type="password"  name="password" id="password"  class="form-control my-input" placeholder="Mot de passe"  value="P@$$w0rd">
                   </div>
                   <div class="form-group">
-                     <input type="password"  name="password" id="password"  class="form-control my-input" placeholder="Confirmez votre mot de passe">
+                     <input type="password"  name="password" id="password"  class="form-control my-input" placeholder="Confirmez votre mot de passe" value="P@$$w0rd">
                   </div>
                    <div class ="form-group">
-                 <textarea class = " w-100" placeholder= "Comment avez-vous connu notre site ?" ></textarea>
+                 <textarea class = " w-100" name="commentaire" placeholder= "Comment avez-vous connu notre site ?" >Google is my friend!</textarea>
                  </div>
                   <div class="text-center ">
                      <button type="submit" class=" btn btn-primary send-button tx-tfm">Créez votre compte</button>

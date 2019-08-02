@@ -10,24 +10,27 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-  	<servlet-name>Accueil</servlet-name>
-  	<jsp-file>/WEB-INF/jsp/Gestion_Interne/Accueil.html</jsp-file>
-  	<init-param>
-        <param-name>id</param-name>
-        <param-value>3</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
+    <servlet-name>Accueil</servlet-name>
+    <jsp-file>/WEB-INF/jsp/Gestion_Interne/Accueil.html</jsp-file>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>Accueil</servlet-name>
-  	<url-pattern>/Accueil</url-pattern>
-  </servlet-mapping>  
+    <servlet-name>Accueil</servlet-name>
+    <url-pattern>/Accueil</url-pattern>
+  </servlet-mapping>
   <servlet>
-	<servlet-name>NavBar</servlet-name>
-	<jsp-file>/WEB-INF/jsp/navBar.jsp</jsp-file>
-  </servlet> 
+    <servlet-name>NavBar</servlet-name>
+    <jsp-file>/WEB-INF/jsp/navBar.jsp</jsp-file>
+  </servlet>
   <servlet-mapping>
-	<servlet-name>NavBar</servlet-name>
-	<url-pattern>/Essai_navBar</url-pattern>
+    <servlet-name>NavBar</servlet-name>
+    <url-pattern>/Essai_navBar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Connexion</servlet-name>
+    <jsp-file>/WEB-INF/jsp/Connexion.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Connexion</servlet-name>
+    <url-pattern>/Connexion</url-pattern>
   </servlet-mapping>
 </web-app>

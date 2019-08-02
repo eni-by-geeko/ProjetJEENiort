@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import fr.restaurants.bo.Plat;
 
@@ -12,7 +13,9 @@ public class PlatsDAOJdbcImpl implements PlatDAO {
 	
 	private static final String SELECT_ALL = "SELECT ID_Plats, Descriptif, Ingredients, Prix, URL, Nom FROM Plats";
 	private static final String INSERT = "INSERT INTO plats(Descriptif, Ingredients, Prix, URL, Nom) VALUES(? , ? , ? , ? , ?)";
-
+	public static Logger logger = Logger.getLogger("Test");
+	
+	
 	@Override
 	public List<Plat> selectAll() {
 		List<Plat> listePlats = new ArrayList<Plat>();
@@ -32,7 +35,7 @@ public class PlatsDAOJdbcImpl implements PlatDAO {
 				listePlats.add(plat);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.severe("Crash en vue : "+ e.getMessage());
 		}
 		return listePlats;
 	}
@@ -57,7 +60,7 @@ public class PlatsDAOJdbcImpl implements PlatDAO {
 		}
 		catch (Exception e)
 		{
-			e.printStackTrace();
+			logger.severe("Crash en vue : "+ e.getMessage());
 		}
 	}
 	

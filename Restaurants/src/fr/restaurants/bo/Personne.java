@@ -14,13 +14,29 @@ public class Personne {
 	private String password;
 	
 	
-	// constructeur
+	// constructeurs
+	public Personne() {}
 	
-	public Personne() {
-		
+	/**
+	 * @param id_personnes pour la db
+	 * @param statut admin ou client
+	 * @param nom nom
+	 * @param prenom prénom
+	 * @param tel n° de tél
+	 * @param mail email
+	 * @param commentaire "Comment avez-vous trouvé le site?"
+	 * @param password mot de passe
+	 */
+	public Personne(String statut, String nom, String prenom, int tel, String mail, String commentaire, String password) {
+		setStatut(statut);
+		setNom(prenom);
+		setPrenom(prenom);
+		setTel(tel);
+		setMail(mail);
+		setCommentaire(commentaire);
+		setPassword(password);
 	}
-	
-	// get et set
+
 	
 	public Personne(String nom) {
 		super();

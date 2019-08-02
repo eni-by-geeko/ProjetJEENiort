@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
@@ -29,13 +27,15 @@ nav {
 				  </button>
 				  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
 				    <ul class="navbar-nav mr-auto">
-				      <li class="nav-item dropdown">
-				        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-				          aria-haspopup="true" aria-expanded="false">Nos Plats
+				      <li class="nav-item active">
+				        <a class="nav-link" href="${pageContext.request.contextPath}/Plats">Nos Plats
+				          <span class="sr-only">(current)</span>
 				        </a>
-				        <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-				          <a class="dropdown-item" href="#">Ajouter plat</a>
-				        </div>
+				      </li>
+				      <li class="nav-item active">
+				        <a class="nav-link" href="${pageContext.request.contextPath}/ajouterPlat">Ajouter plat
+				          <span class="sr-only">(current)</span>
+				        </a>
 				      </li>
 				    </ul>
 				    <ul class="navbar-nav ml-auto nav-flex-icons">
@@ -47,7 +47,7 @@ nav {
 				        <div class="dropdown-menu dropdown-menu-right dropdown-default"
 				          aria-labelledby="navbarDropdownMenuLink-333">
 				          <a class="dropdown-item" href="${pageContext.request.contextPath}/compte">Mon compte</a>
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/accueil">Se déconnecter</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/ServletDeconnexion">Se déconnecter</a>
 				        </div>
 				      </li>
 				    </ul>
@@ -79,7 +79,7 @@ nav {
 				        <div class="dropdown-menu dropdown-menu-right dropdown-default"
 				          aria-labelledby="navbarDropdownMenuLink-333">
 				          <a class="dropdown-item" href="${pageContext.request.contextPath}/compte">Mon compte</a>
-				          <a class="dropdown-item" href="${pageContext.request.contextPath}/accueil">Se déconnecter</a>
+				          <a class="dropdown-item" href="${pageContext.request.contextPath}/ServletDeconnexion">Se déconnecter</a>
 				        </div>
 				      </li>
 				    </ul>

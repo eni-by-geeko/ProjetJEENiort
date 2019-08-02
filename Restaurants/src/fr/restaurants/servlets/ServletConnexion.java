@@ -28,6 +28,7 @@ public class ServletConnexion extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
 @Override
 public void init() throws ServletException {
 	 tentative = 0;
@@ -60,12 +61,13 @@ public void init() throws ServletException {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
-		// Recuperation des données
+
+		RequestDispatcher rd = null;
+		// Recuperation des donnï¿½es
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		// Transaction avec la base de données
+		// Transaction avec la base de donnï¿½es
 		Personne personne=null;
 		PersonneManager pm =new PersonneManager(); 
 		personne= pm.getByEmail(email);
@@ -83,8 +85,9 @@ public void init() throws ServletException {
 					HttpSession session = request.getSession();
 					session.setAttribute("statut", personne.getStatut());
 
-					RequestDispatcher rd = request.getRequestDispatcher("/accueil");
-					rd.forward(request, response);					
+
+					rd = request.getRequestDispatcher("/accueil");
+
 				}
 				else {
 					
@@ -97,13 +100,14 @@ public void init() throws ServletException {
 		if (tentative==3) {
 			tentative=0;
 
-			RequestDispatcher rd = request.getRequestDispatcher("/inscription");
 
-			rd.forward(request, response);
+			rd = request.getRequestDispatcher("/inscription");
+
 		}
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
-		rd.forward(request, response);		
+
+		if (rd == null)
+			rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
+		rd.forward(request, response);
 		
 	}
 	
