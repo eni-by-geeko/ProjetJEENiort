@@ -14,18 +14,15 @@ import javax.ws.rs.PathParam;
 
 import fr.restaurants.bo.Commentaire;
 
+@Path("/commentaires")
 public class GestionCommentaires {
 	
 	private static List<Commentaire> commentaires = new ArrayList<Commentaire>();
 	private static int i;
-	
-	
-	
-	
-	
+
 	static {
-		commentaires.add(new Commentaire(0, "Je prends des notes !", 2.2f, new Date()));
-		commentaires.add(new Commentaire(1, "Mon carnet est vraiment magnifique", 4.8f, new Date()));
+		commentaires.add(new Commentaire(0, "J'aime pas le poireau !", 2.2f, new Date()));
+		commentaires.add(new Commentaire(1, "C'était trés bon", 4.8f, new Date()));
 		i = 2;
 	}
 	
