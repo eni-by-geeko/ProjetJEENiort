@@ -121,6 +121,19 @@ public class Personne {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Personne [id_personnes=").append(id_personnes).append(", statut=").append(statut)
+				.append(", nom=").append(nom).append(", prenom=").append(prenom).append(", tel=").append(tel)
+				.append(", mail=").append(mail).append(", commentaire=").append(commentaire).append(", password=")
+				.append(password).append("]");
+		return builder.toString();
+	}
 	
 
 	

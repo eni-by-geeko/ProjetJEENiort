@@ -16,6 +16,12 @@
 	/>
 </Context>
 		<!-- 
-		/* url="jdbc:sqlserver://localhost;databasename=Restaurants" */
 		Pc de Titmumu 
+		url="jdbc:sqlserver://10.138.200.3;databasename=Restaurants"
+		username="sa"
+		password="Pa$$w0rd"
+
+		Pc de Marc
+		url="jdbc:sqlserver://localhost;databasename=Restaurants"
+
 		-->

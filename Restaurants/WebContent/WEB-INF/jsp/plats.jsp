@@ -52,7 +52,12 @@
 		color: gray;
 	}
 
-
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align : center;left: 50%;
+    transform: translateX(-50%);
+        }
 
 
 
@@ -123,8 +128,8 @@
 </div>
 
 
-
-
 <jsp:include page="scriptJS.jsp"></jsp:include>
+<footer class="text-center"><a href="<%=request.getContextPath()%>/ServletMentionsLegales"><strong>Mentions légales</strong></a></footer>
+
 </body>
 </html>
