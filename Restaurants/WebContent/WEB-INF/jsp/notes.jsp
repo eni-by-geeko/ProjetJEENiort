@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +52,7 @@
 	.stars .fa-star:hover ~ .fa-star {
 		color: white;
 	}
-	
+
 footer {
     position: fixed;
     bottom: 0;
@@ -58,65 +60,114 @@ footer {
     transform: translateX(-50%);
         }
 
+
+	.row {
+		display:inline-block
+		
+	}
+	
+
 </style>
 
 
 
 </head>
-<body>
+<body onload="list('${statut}', '${personne.getMail()}');">
 
-	<jsp:include page="navBar.jsp"></jsp:include>
+<jsp:include page="navBar.jsp"></jsp:include>
+<p> mail : ${personne.getMail()}</p>
+<c:choose>
+	<c:when test="${statut=='admin' || statut=='client'}"> 			
 
-	<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-10">
-					<h3>
-						Commentaires :
-					</h3>
-				</div>
-				<div class="col-md-2">
-					<h3>
-						Note moyenne :
-					</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-2">
-				</div>
-			
-				
-				<div class="card text-white bg-primary mb-3 col-md-8" >
-			  		<div class="card-header">Avis</div>
-			  		<div class="card-body col-md-10">
-					  	<textarea class="card-body col-md-10" rows="4" >
-								fgsqdfgfdq
-						</textarea>
-						<div class="rating col-md-2">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-10">
 							<h3>
-								note :
+								Commentaires :
 							</h3>
-							<div class="stars">
-								<i href="star1" class="fa fa-star"></i>
-								<i href="star2" class="fa fa-star"></i>
-								<i href="star3" class="fa fa-star"></i>
-								<i href="star4" class="fa fa-star"></i>
-								<i href="star5" class="fa fa-star"></i>
-							</div>
 						</div>
-			  		</div>
+						<div class="col-md-2">
+							<h3>
+								Note moyenne :
+							</h3>
+						</div>
+					</div>
+					<div class="row">
+					
+						<div class="col-md-2">
+						</div>
 
+						<div id="commentaires" class="col-md-8">
+						</div>
+
+						<div class="card text-white bg-primary mb-3 col-md-8" >
+					  		<div class="card-header">Avis</div>
+					  		<div class="card-body col-md-10">
+					  			<textarea class="card-body col-md-12" rows="4" id="taCreation" placeholder="Créez un nouveau commentaire..." ></textarea>
+								<div class="rating col-md-2">
+									<a>note :</a>
+									<div class="stars">
+										<i href="star1" class="fa fa-star"></i>
+										<i href="star2" class="fa fa-star"></i>
+										<i href="star3" class="fa fa-star"></i>
+										<i href="star4" class="fa fa-star"></i>
+										<i href="star5" class="fa fa-star"></i>
+									</div>
+								</div>
+								<input type="button" class="btn btn-warning" value="Ajouter" onclick="ajouter()" style="float: right;">
+								
+					  		</div>
+						</div>
+						
+						<div class="col-md-2">
+						</div>
+					</div>
 				</div>
-				<div class="col-md-2">
+
+			</div>
+		</div>
+	</c:when>
+		
+		
+	<c:otherwise>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-10">
+							<h3>
+								Commentaires :
+							</h3>
+						</div>
+						<div class="col-md-2">
+							<h3>
+								Note moyenne :
+							</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">
+						</div>
+						
+						<div id="commentaires" class="col-md-8">
+						</div>
+
+						<div class="col-md-2">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
+	</c:otherwise>
+</c:choose>
 
 
-	<jsp:include page="scriptJS.jsp"></jsp:include>
+
+
+<jsp:include page="scriptJS.jsp"></jsp:include>
+
 
  <footer class="text-center"><a href="<%=request.getContextPath()%>/ServletMentionsLegales"><strong>Mentions légales</strong></a></footer>
 
