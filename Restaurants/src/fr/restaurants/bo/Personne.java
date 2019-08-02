@@ -37,11 +37,12 @@ public class Personne {
 		setPassword(password);
 	}
 
+	
+	public Personne(String nom) {
+		super();
+		this.nom = nom;
+	}
 
-
-
-
-	// get et set
 	public int getId_personnes() {
 		return id_personnes;
 	}

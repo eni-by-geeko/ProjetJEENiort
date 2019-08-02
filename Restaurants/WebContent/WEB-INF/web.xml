@@ -33,4 +33,13 @@
     <servlet-name>Connexion</servlet-name>
     <url-pattern>/Connexion</url-pattern>
   </servlet-mapping>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Mentions_Legales</servlet-name>
+    <jsp-file>/WEB-INF/jsp/mentions_legales.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Mentions_Legales</servlet-name>
+    <url-pattern>/mentions_legales</url-pattern>
+  </servlet-mapping>
 </web-app>

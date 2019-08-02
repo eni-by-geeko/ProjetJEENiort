@@ -10,32 +10,30 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
+import fr.restaurants.bll.TablesManager;
 import fr.restaurants.bo.Tables;
 
 @Path("/tables")
 public class GestionTables {
-	private static List<Tables> tables = new ArrayList<Tables>();
-	
-	
-	static {
-		tables.add(new Tables(0, "libre"));
-		tables.add(new Tables(1, "occupee"));
-		tables.add(new Tables(3, "commande"));
-		tables.add(new Tables(4, "reserve"));
-		tables.add(new Tables(5, "reserve"));
-		tables.add(new Tables(6, "libre"));
-		tables.add(new Tables(7, "commande"));
-		tables.add(new Tables(8, "reserve"));
-		
-	}
+	private static List<Tables> tables = new ArrayList<Tables>();	
 	
 	@GET
-	public List<Tables> getNotes() {
+	public List<Tables> getTables() {
+		TablesManager tm = new TablesManager();
+		List<Tables> tables = tm.selectAll();	
 		return tables;
 	}
-	
-	
-	
+	@GET
+	@Path("/{id : \\d+}")
+	public List<Tables> getTablesReserver(@PathParam("id") int id) {		
+		TablesManager tm = new TablesManager();	
+		List<Tables> tablesNr = tm.selectAllByRestaurants(id);	
+		List<Tables> tablesR = tm.selectAllByRestaurantsReserved(id);	
+		List<Tables> tables= new ArrayList<Tables>();
+		tables.addAll(tablesR);
+		tables.addAll(tablesNr);		
+		return tables;
+	}	
 	@PUT
 	@Path("/{numero : \\d+}")
 	public Tables modifierNote(

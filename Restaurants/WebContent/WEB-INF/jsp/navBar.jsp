@@ -15,6 +15,10 @@
 nav {
 	background-color: #4285F4;
 }
+#footer {
+    position: absolute;
+    bottom: 0;
+        }
 </style>
 
 	<c:choose>
@@ -123,4 +127,4 @@ nav {
 		</c:otherwise>
 		
 	</c:choose>
-
+	

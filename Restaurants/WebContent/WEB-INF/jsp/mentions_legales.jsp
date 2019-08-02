@@ -2,30 +2,37 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+<style>
+#footer {
+    position: absolute;
+    bottom: 0;
+        }
+</style>
+
 <head>
 <meta charset="UTF-8">
 <title>Mentions légales</title>
 </head>
 <body>
 <jsp:include page="navBar.jsp"></jsp:include>
-	<jsp:include page="scriptJS.jsp"></jsp:include>
+<jsp:include page="scriptJS.jsp"></jsp:include>
 	
 	
 <main class="p-5">
 	
 	<h1> MENTIONS LEGALES</h1>
 	<h3> SIEGE SOCIAL</h3>
-	<p> Etienne Cassin <br>
-		10 quai André Morice <br>
-		44000 Nantes <br>
-		tel : 02 85 26 74 12 <br><br>
+		<p> Etienne Cassin <br>
+			10 quai André Morice <br>
+			44000 Nantes <br>
+			tel : 02 85 26 74 12 <br><br>
 		
-		Le restaurant 101 Recettes Gourmandes est une SARL au capital social de 80.000€ Siret:414 154 152 658 97 - Code NAF: 5871 A </p>
+			Le restaurant 101 Recettes Gourmandes est une SARL au capital social de 80.000€ Siret:414 154 152 658 97 - Code NAF: 5871 A </p>
 	<br><br>
 	
 	<h3> DESIGN GRAPHIQUE / Conception </h3>
-	<p> Dream Team (Julien, Marc, Christian et Sali)<br>
-	Création graphique, mise en page, developpements WEB, référencement naturel.
+		<p> Dream Team (Julien, Marc, Christian et Sali)<br>
+			Création graphique, mise en page, developpements WEB, référencement naturel.</p>
 	
 	<br><br>
 	
@@ -34,13 +41,13 @@
 	<br><br>
 	
 	<h3> RESPONSABLE DE PUBLICATION</h3>
-	<p>Etienne Cassin, gérant de la société.<br>
-		Restaurant 101 Recettes Gourmandes <br>
-		10 quai André Morice <br>
-		44000 Nantes <br>
+		<p> Etienne Cassin, gérant de la société.<br>
+			Restaurant 101 Recettes Gourmandes <br>
+			10 quai André Morice <br>
+			44000 Nantes </p> <br>
 		
 	<h3> DONNEES PERSONNELLES / VIE PRIVEE</h3>
-	<p> En conformité avec les dispositions de la loi du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, vous disposez d'un droit d'accès et de rectification portant sur les données vous concernant en écrivant au siège social.</p>
+		<p> En conformité avec les dispositions de la loi du 6 janvier 1978 relative à l'informatique, aux fichiers et aux libertés, vous disposez d'un droit d'accès et de rectification portant sur les données vous concernant en écrivant au siège social.</p>
 	
 	
 </main>		

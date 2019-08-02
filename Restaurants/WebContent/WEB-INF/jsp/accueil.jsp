@@ -27,7 +27,12 @@ hr:after {
 h1.pacifico{font-family: 'Pacifico', cursive;}
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Permanent+Marker&display=swap');
 h3.permanentmarker {font-family: 'Permanent Marker', cursive;}
-
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align : center;left: 50%;
+    transform: translateX(-50%);
+        }
 </style>
 
 <!--  Bootstrap -->
@@ -56,8 +61,8 @@ h3.permanentmarker {font-family: 'Permanent Marker', cursive;}
 </article>
 <article class="row">
 	<section class="col-lg-4 offset-lg-2">
-	<h2>Restaurant de Nantes</h2>
-	<img src="${pageContext.request.contextPath}/img/nantes.jpg" alt="photo restaurant Nantes">
+		<h2>Restaurant de Nantes</h2>
+		<img src="${pageContext.request.contextPath}/img/nantes.jpg" alt="photo restaurant Nantes">
 	</section>
 	<section class="col-lg-4">
 		<h3>Nous trouver</h3>
@@ -69,8 +74,8 @@ h3.permanentmarker {font-family: 'Permanent Marker', cursive;}
 		
 	</section>
 	<section class="col-lg-4">
-	<h3>Ouverture prochaine</h3>
-	<p > Nous vous informons que le restaurant ouvrira ses portes le 02 septembre 2019. 
+		<h3>Ouverture prochaine</h3>
+		<p > Nous vous informons que le restaurant ouvrira ses portes le 02 septembre 2019. 
 		<br>
 		Nous vous accueillerons avec plaisir dans une ambiance lounge avec une cuisine soignée.
 		<br><br>
@@ -79,10 +84,12 @@ h3.permanentmarker {font-family: 'Permanent Marker', cursive;}
 		... une cuisine inspirée par les caprices de la nature et les opportunités du marché. <br>
 		... un service attentif, souriant et chaleureux.
 	</section>
+	
 </article>
 
 <jsp:include page="scriptJS.jsp"></jsp:include>
-
+<br>
+<footer class="text-center"><a href="<%=request.getContextPath()%>/ServletMentionsLegales"><strong>Mentions légales</strong></a></footer>
 
 </body>
 </html>
