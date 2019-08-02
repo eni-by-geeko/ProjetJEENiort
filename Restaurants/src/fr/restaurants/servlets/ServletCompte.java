@@ -29,43 +29,43 @@ public class ServletCompte extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/compte.jsp");
 		rd.forward(request, response);
 	}
-		
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
+
+		/* Get form data from compte.jsp
+		/* <input type="text" name="name"  class="form-control my-input" id="name" placeholder="Nom" value="${personne.getNom()}" >
+           <input type="text" name="prenom"  class="form-control my-input" id="prenom" placeholder="Prénom" value="${personne.getPrenom()}" >
+           <input type="email" name="email"  class="form-control my-input" id="email" placeholder="Email"  value="${personne.getMail()}" >
+           <input type="password"  name="password" id="password"  class="form-control my-input" placeholder="Mot de passe" value="${personne.getPassword()}" >
+        */ 	
 		// Recuperation des données
-		String email = request.getParameter("email");
+		String nom = request.getParameter("name");
+		String prenom = request.getParameter("prenom");
+		String mail = request.getParameter("email");
 		String password = request.getParameter("password");
 		
 		// Transaction avec la base de données
-		Personne personne=null;
+		Personne personne = null;
 		PersonneManager pm =new PersonneManager(); 
-		personne= pm.getByEmail(email);
+		personne = pm.getAllByEmail(mail);
 		
-			if (personne.getMail()==null) {
-				request.setAttribute ("erreur", "Votre email est invalide");
+		// Modification de l'objet personne
+		personne.setNom(nom);
+		personne.setPrenom(prenom);
+		personne.setMail(mail);
+		personne.setPassword(password);
 				
-			} else {
-				
-				if (password.equals(personne.getPassword())) {
-					HttpSession session = request.getSession();
-					session.setAttribute("statut", personne.getStatut());
-
-					RequestDispatcher rd = request.getRequestDispatcher("/accueil");
-					rd.forward(request, response);					
-				}
-				else {
-					
-					request.setAttribute("erreur","Votre mot de passe est incorrect");
-				}
-			}
+		// Modification de la db
+		personne = pm.update(personne);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("personne", personne);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/compte.jsp");
 		rd.forward(request, response);		
 	}

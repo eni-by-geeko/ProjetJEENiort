@@ -38,4 +38,9 @@ public class PersonneManager {
 	public Personne insert(Personne personneInsert) {
 		return this.personneDAO.insert(personneInsert);
 	}
+
+	public Personne update(Personne personne) {
+		
+		return this.personneDAO.update(personne);
+	}
 }
