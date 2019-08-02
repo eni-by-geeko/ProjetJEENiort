@@ -25,13 +25,15 @@ public class GestionTables {
 	}
 	@GET
 	@Path("/{id : \\d+}")
-	public List<Tables> getTables(@PathParam("id") int id) {		
-		TablesManager tm = new TablesManager();
-		List<Tables> tables = tm.selectAllByRestaurants(id);	
+	public List<Tables> getTablesReserver(@PathParam("id") int id) {		
+		TablesManager tm = new TablesManager();	
+		List<Tables> tablesNr = tm.selectAllByRestaurants(id);	
+		List<Tables> tablesR = tm.selectAllByRestaurantsReserved(id);	
+		List<Tables> tables= new ArrayList<Tables>();
+		tables.addAll(tablesR);
+		tables.addAll(tablesNr);		
 		return tables;
-	}
-	
-	
+	}	
 	@PUT
 	@Path("/{numero : \\d+}")
 	public Tables modifierNote(

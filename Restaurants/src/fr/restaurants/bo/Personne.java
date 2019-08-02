@@ -19,9 +19,14 @@ public class Personne {
 	public Personne() {
 		
 	}
-
+	
 	// get et set
 	
+	public Personne(String nom) {
+		super();
+		this.nom = nom;
+	}
+
 	public int getId_personnes() {
 		return id_personnes;
 	}

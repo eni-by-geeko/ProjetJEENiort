@@ -21,4 +21,7 @@ public class TablesManager {
 	public List<Tables> selectAllByRestaurants(int i){
 		return tablesDao.selectAllByRestaurants(i);		
 	};
+	public List<Tables> selectAllByRestaurantsReserved(int i){
+		return tablesDao.selectAllByRestaurantsReserved(i);		
+	};
 }

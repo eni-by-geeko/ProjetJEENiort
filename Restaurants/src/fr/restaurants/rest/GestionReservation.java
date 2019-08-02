@@ -6,7 +6,7 @@ import javax.ws.rs.Path;
 import fr.restaurants.bll.ReservationsManager;
 import fr.restaurants.bo.Reservations;
 
-@Path("/tables")
+@Path("/reservations")
 public class GestionReservation {
 	private static Reservations reservations;	
 	

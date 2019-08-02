@@ -30,19 +30,36 @@ function succes(response) {
 	for(i=0; i<responseJSON.length; i++) {
 		body.appendChild(createTableList(responseJSON[i]));
 	}
+	console.log(response);
 }
 function echec(response) {
 body.innerHTML=response;
 }
+
+function TabOqpCmd(element){
+	let chk = document.getElementById('AffTable')
+	if(chk==null){
+	let div=document.createElement('div');	
+	div.id = "AffTable";
+	div.innerHTML = "Table N "+element.numero+"\n Statut " +element.statut+"\n Reserve par "+element.reservation.personne.nom +"\n Nbre de personnes " + element.reservation.nbrePersonnes;	
+	div.addEventListener('click',function(){ document.getElementById('AffTable').remove()});
+	body.appendChild(div);}
+}
 function createTableList(element) {	
-	var canvas = document.createElement('canvas');
-	var div = document.createElement('div');
-	div.innerHTML = element.numero+" : "+element.statut;//+" "+ element.nom;		
+	var canvas = document.createElement('canvas');	
 	canvas.setAttribute("class", "tableResto");	
 	canvas.id = element.numero;	
+	
 	  var context = canvas.getContext("2d");
 	  context.beginPath();	  
-	  context.arc(150, 75, 60, 0, 2 * Math.PI);//taille et coordonnee	  
+	  context.arc(150, 75, 60, 0, 2 * Math.PI);//taille et coordonnee
+	  context.font = "20px Arial";
+		if (element.statut != 'libre'){			 
+			  context.fillText(element.numero+" : "+element.statut+" "+ element.reservation.personne.nom, 70, 150);
+			  }
+				else{
+					context.fillText(element.numero+" : "+element.statut, 70, 150);
+				}	 
 	switch(element.statut){
 	case 'libre':
 		context.fillStyle='green';
@@ -56,8 +73,11 @@ function createTableList(element) {
 		break;		
 	case 'commande':
 		context.fillStyle='orange';
+		let chk = document.getElementById('AffTable')
+		if(chk==null){}
+		canvas.addEventListener('click',function(){ TabOqpCmd(element)});
 		break;
-	}		
+	}
 	context.fill();
 	var ctx = canvas.getContext("2d");
 	ctx.translate(50, 20);
@@ -68,7 +88,7 @@ function createTableList(element) {
 	ctx.rect(10,10,25,25);
 	ctx.stroke();
 	ctx.fill();
-	//var ctx1 = canvas.getContext("2d");
+
 	ctx.translate(185, -10);
 	ctx.beginPath();
 	ctx.rotate(0 * Math.PI / 180);
@@ -77,7 +97,6 @@ function createTableList(element) {
 	ctx.rect(10,10,25,25);
 	ctx.stroke();	
 	ctx.fill();	
-	canvas.appendChild(div);
 	return canvas;
 }
 //

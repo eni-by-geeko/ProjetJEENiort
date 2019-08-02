@@ -8,5 +8,6 @@ public interface TablesDAO {
 
 	List<Tables> selectAll();
 	List<Tables> selectAllByRestaurants(int i);
+	List<Tables> selectAllByRestaurantsReserved(int i);
 
 }
