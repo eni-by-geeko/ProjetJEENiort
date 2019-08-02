@@ -18,15 +18,16 @@ import fr.restaurants.bo.Personne;
  */
 @WebServlet("/connexion")
 public class ServletConnexion extends HttpServlet {
+	
+    // Attribut
 	private static final long serialVersionUID = 1L;
-       // Attribut
 	private int tentative;
+	
     /**
      * @see HttpServlet#HttpServlet()
      */
     public ServletConnexion() {
         super();
-        // TODO Auto-generated constructor stub
     }
     
 @Override
@@ -48,15 +49,10 @@ public void init() throws ServletException {
 		compteurAccesPendantSession+=1;
 		session.setAttribute("compteurAcces", compteurAccesPendantSession);
 		
-		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
 		rd.forward(request, response);
-		
 	}
-		
 	
-	
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -72,19 +68,25 @@ public void init() throws ServletException {
 		PersonneManager pm =new PersonneManager(); 
 		personne= pm.getByEmail(email);
 		
-		
 			if (personne.getMail()==null) {
 				
 				request.setAttribute ("erreur", "Votre email est invalide");
 				tentative++;
 				
-				
 			} else {
 				
 				if (password.equals(personne.getPassword())) {
+					
+					//Le membre est connu, tout va bien, on continue
 					HttpSession session = request.getSession();
 					session.setAttribute("statut", personne.getStatut());
-
+					
+					// Transaction avec la base de donnï¿½es
+					Personne personneComplete = null;
+					personneComplete = pm.getAllByEmail(email);
+					
+					//Marc: ajout des données de la personne pour la page compte (modifier son profil)
+					session.setAttribute("personne", personneComplete);
 
 					rd = request.getRequestDispatcher("/accueil");
 
@@ -95,21 +97,14 @@ public void init() throws ServletException {
 					tentative++;
 					
 				}
-				
 			}
 		if (tentative==3) {
 			tentative=0;
-
-
 			rd = request.getRequestDispatcher("/inscription");
-
 		}
 
 		if (rd == null)
 			rd = request.getRequestDispatcher("/WEB-INF/jsp/connexion.jsp");
 		rd.forward(request, response);
-		
 	}
-	
-
 }
