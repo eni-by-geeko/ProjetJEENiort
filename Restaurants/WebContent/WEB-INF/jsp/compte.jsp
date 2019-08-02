@@ -12,6 +12,15 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
+<style>
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align : center;left: 50%;
+    transform: translateX(-50%);
+ 
+        }
+</style>
 </head>
 
 <body>
@@ -63,6 +72,6 @@
    
    <jsp:include page="scriptJS.jsp"></jsp:include>
    
-
+<footer class="text-center"><a href="<%=request.getContextPath()%>/ServletMentionsLegales"><strong>Mentions légales</strong></a></footer>
 </body>
 </html>
