@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Restaurants</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Accueil</servlet-name>
+    <jsp-file>/WEB-INF/jsp/Gestion_Interne/Accueil.html</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Accueil</servlet-name>
+    <url-pattern>/Accueil</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NavBar</servlet-name>
+    <jsp-file>/WEB-INF/jsp/navBar.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NavBar</servlet-name>
+    <url-pattern>/Essai_navBar</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Connexion</servlet-name>
+    <jsp-file>/WEB-INF/jsp/Connexion.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Connexion</servlet-name>
+    <url-pattern>/Connexion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Mentions_Legales</servlet-name>
+    <jsp-file>/WEB-INF/jsp/mentions_legales.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Mentions_Legales</servlet-name>
+    <url-pattern>/mentions_legales</url-pattern>
+  </servlet-mapping>
+</web-app>
